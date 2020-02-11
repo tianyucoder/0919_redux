@@ -4,7 +4,7 @@ import Count from './components/count'
 export default class App extends Component {
 	render() {
 		return (
-			<Count/>
+			<Count store={this.props.store}/>
 		)
 	}
 }
