@@ -1,5 +1,5 @@
+//该组件是UI组件，在该组件中不能够使用任何的redux-API
 import React, { Component } from 'react'
-import {createIncrementAction,createDecrementAction} from '../redux/count_action_creator'
 
 export default class Count extends Component {
 	//加
@@ -9,7 +9,7 @@ export default class Count extends Component {
 		//const number = this.state.number
 		//this.setState({number:number+value*1})
 		//2.调用dispatch分发一个“加”的action
-		this.props.store.dispatch(createIncrementAction(value*1))
+		//this.props.store.dispatch(createIncrementAction(value*1))
 	}
 
 	//减
@@ -20,7 +20,7 @@ export default class Count extends Component {
 		//const number = this.state.number
 		//this.setState({number:number-value*1})
 		//this.props.store.dispatch({type:DECREMENT,data:value*1})
-		this.props.store.dispatch(createDecrementAction(value*1))
+		//this.props.store.dispatch(createDecrementAction(value*1))
 	}
 
 	//奇数才去加
@@ -28,11 +28,11 @@ export default class Count extends Component {
 		//1.获取用户选择的数字
 		const value = this.refs.checkNumber.value
 		//2.更新状态
-		const number = this.props.store.getState()
-		if(number%2 === 1){
+		//const number = this.props.store.getState()
+		//if(number%2 === 1){
 			//this.props.store.dispatch({type:INCREMENT,data:value*1})
-			this.props.store.dispatch(createIncrementAction(value*1))
-		}
+			//this.props.store.dispatch(createIncrementAction(value*1))
+		//}
 	}
 
 	//延迟一会加
@@ -43,14 +43,15 @@ export default class Count extends Component {
 		//const number = this.state.number
 		setTimeout(()=>{
 			//this.props.store.dispatch({type:INCREMENT,data:value*1})
-			this.props.store.dispatch(createIncrementAction(value*1))
+			//this.props.store.dispatch(createIncrementAction(value*1))
 		},1000)
 	}
 
 	render() {
+		console.log(this.props);
 		return (
 			<div>
-				<h2>当前计数为：{this.props.store.getState()}</h2>
+				<h2>当前计数为：xxxxx</h2>
 				<select ref="checkNumber">
 					<option value="1">1</option>
 					<option value="2">2</option>
