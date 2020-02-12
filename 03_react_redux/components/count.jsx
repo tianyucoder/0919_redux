@@ -33,10 +33,9 @@ export default class Count extends Component {
 		//1.获取用户选择的数字
 		const value = this.refs.checkNumber.value
 		//2.更新状态
-		/* setTimeout(()=>{
+		setTimeout(()=>{
 			this.props.increment(value*1)
-		},1000) */
-		this.props.incrementAsync(value*1,4000)
+		},1000)
 	}
 
 	render() {
