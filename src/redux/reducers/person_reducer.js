@@ -4,16 +4,15 @@
 import {ADDPERSON} from '../action_types'
 
 //若没有传过来preState(是初始化的时候)
-export default function (preState=[],action){ 
-	console.log(action);
-	//从action中获取：type(加？还是减？)、data(加多少？减多少？)
+export default function (preState=[{name:'lisi',age:19}],action){ 
+	//console.log(action);
+	//从action中获取：type、data
 	const {type,data} = action
 	//提前准备好一个新状态
 	let newState
-	//用switch去判断type（到底是加还是减？）
 	switch (type) {
 		case ADDPERSON:
-			newState = [...preState,data]
+			newState = [data,...preState]
 			return newState
 		default:
 			return preState

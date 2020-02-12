@@ -27,5 +27,4 @@ export default connect(
 		increment:createIncrementAction,
 		decrement:createDecrementAction
 	}
-
 )(Count)

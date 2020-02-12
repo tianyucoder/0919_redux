@@ -5,7 +5,7 @@ import {INCREMENT,DECREMENT} from '../action_types'
 
 //若没有传过来preState(是初始化的时候)
 export default function (preState=0,action){ 
-	console.log(action);
+	//console.log(action);
 	//从action中获取：type(加？还是减？)、data(加多少？减多少？)
 	const {type,data} = action
 	//提前准备好一个新状态

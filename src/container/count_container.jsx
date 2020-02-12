@@ -19,7 +19,7 @@ import {
 			备注：调用connect也可以传递：一个回调函数、一个对象
 	*/
 export default connect(
-	state => ({number:state}),//传递(映射)状态给UI组件
+	state => ({number:state.number}),//传递(映射)状态给UI组件
 
 	//给UI组件传递(映射)操作状态的方法的完整写法---函数
 	/* dispatch =>({//传递(映射)操作状态的方法给UI组件
