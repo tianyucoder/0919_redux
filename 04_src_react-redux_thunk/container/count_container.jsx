@@ -8,7 +8,7 @@ import {
 	createIncrementAction,
 	createDecrementAction,
 	createIncrementAsyncAction
-} from '../redux/action_creators/count_action_creator'
+} from '../redux/count_action_creator'
 
 /* 
 		关于connect
