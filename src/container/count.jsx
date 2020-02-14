@@ -1,6 +1,13 @@
+//import Count from '../components/count'
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {
+	createIncrementAction,
+	createDecrementAction,
+	createIncrementAsyncAction
+} from '../redux/action_creators/count'
 
-export default class Count extends Component {
+class Count extends Component {
 	//加
 	increment = ()=>{
 		//1.获取用户选择的数字
@@ -57,3 +64,12 @@ export default class Count extends Component {
 		)
 	}
 }
+
+export default connect(
+	state => ({number:state.number}),//传递(映射)状态给UI组件
+	{
+		increment:createIncrementAction,
+		decrement:createDecrementAction,
+		incrementAsync:createIncrementAsyncAction,
+	}
+)(Count)

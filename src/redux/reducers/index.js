@@ -1,6 +1,6 @@
 //该文件用于汇总所有的reducer
-import countReducer from './count_reducer'
-import personReducer from './person_reducer'
+import countReducer from './count'
+import personReducer from './person'
 
 import {combineReducers} from 'redux'
 

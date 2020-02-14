@@ -4,11 +4,7 @@ import Count from '../components/count'
 //引入connect方法
 import {connect} from 'react-redux'
 //引入action_creator
-import {
-	createIncrementAction,
-	createDecrementAction,
-	createIncrementAsyncAction
-} from '../redux/action_creators/count_action_creator'
+import {createIncrementAction,createDecrementAction} from '../redux/count_action_creator'
 
 /* 
 		关于connect
@@ -19,7 +15,7 @@ import {
 			备注：调用connect也可以传递：一个回调函数、一个对象
 	*/
 export default connect(
-	state => ({number:state.number}),//传递(映射)状态给UI组件
+	state => ({number:state}),//传递(映射)状态给UI组件
 
 	//给UI组件传递(映射)操作状态的方法的完整写法---函数
 	/* dispatch =>({//传递(映射)操作状态的方法给UI组件
@@ -29,8 +25,8 @@ export default connect(
 	//给UI组件传递(映射)操作状态的方法的精简写法---对象,该种写法经过connect方法会转换为上面的完整版写法
 	{
 		increment:createIncrementAction,
-		decrement:createDecrementAction,
-		incrementAsync:createIncrementAsyncAction,
+		decrement:createDecrementAction
 	}
-
 )(Count)
+
+connect()()
